@@ -2,6 +2,8 @@
 
 > Referencia de diseño para todos los proyectos de Hike. Copiá de acá para mantener consistencia visual entre apps, decks y materiales.
 
+🔗 **[Visual Showcase](https://abn-digital.github.io/guidelines-marca-hike/)** — Abrí este link para ver todos los colores, componentes y patrones renderizados en el browser.
+
 ---
 
 ## Tabla de contenidos
@@ -93,13 +95,36 @@ font-family: 'Inter', system-ui, sans-serif;
 | `--surface-2` | `#F7F4F1` | Cards levemente más cálidas |
 | `--dark` | `#1A0A2E` | CTA sections, footer, slides oscuros |
 
+### Fondos oscuros — Reglas estrictas
+
+> ⚠️ **REGLA CRÍTICA**: Para backgrounds de secciones/páginas oscuras, usar **ÚNICAMENTE** `#1A0A2E` (--dark) o `#1A0F30` (variante densa). Ningún otro violeta está permitido como fondo de sección.
+
+| Color | Hex | ¿Usar como fondo de sección? |
+|---|---|---|
+| `--dark` | `#1A0A2E` | ✅ **Sí** — Background principal oscuro |
+| Variante densa | `#1A0F30` | ✅ **Sí** — Alternativa un poco más violácea |
+| `--accent-dark` | `#2D1B4E` | 🚫 **NO** — Demasiado violeta, se ve infantil |
+| `--accent-deep` | `#5E5070` | 🚫 **NO** — Gris violeta, cero autoridad |
+
+```jsx
+// ✅ Correcto — sección oscura con --dark
+<section className="bg-[#1A0A2E] py-20 px-6">...</section>
+
+// ✅ Correcto — variante densa
+<section className="bg-[#1A0F30] py-20 px-6">...</section>
+
+// ❌ PROHIBIDO — accent-dark como fondo de sección
+<section className="bg-[#2D1B4E] py-20 px-6">...</section>
+// Se ve como app para adolescentes, no enterprise.
+```
+
 ### Colores de acento (morado)
 
 | Token | Hex | Uso |
 |---|---|---|
 | `--accent` | `#7E6E94` | Borders, labels, separadores suaves |
-| `--accent-dark` | `#2D1B4E` | Headlines, botones, elementos focales |
-| `--accent-deep` | `#5E5070` | Hover entre `--accent` y `--accent-dark` |
+| `--accent-dark` | `#2D1B4E` | ⚠️ Headlines, botones, elementos focales. **NUNCA como fondo de sección.** |
+| `--accent-deep` | `#5E5070` | Hover entre `--accent` y `--accent-dark`. **NUNCA como fondo.** |
 | `--accent-light` | `rgba(126,110,148,0.08)` | Backgrounds de hover muy sutil |
 | `--accent-border` | `rgba(126,110,148,0.18)` | Borders suaves sobre fondo claro |
 
@@ -525,4 +550,4 @@ export default function MiSeccion() {
 
 ---
 
-*Última actualización: Mayo 2026 — sincronizado con el Deck en `/Deck/src/app/globals.css`*
+*Última actualización: Junio 2026 — sincronizado con el Deck en `/Deck/src/app/globals.css`. Reglas de fondos oscuros reforzadas.*
