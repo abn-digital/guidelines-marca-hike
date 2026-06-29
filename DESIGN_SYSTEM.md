@@ -122,11 +122,13 @@ font-family: 'Inter', system-ui, sans-serif;
 
 | Token | Hex | Uso |
 |---|---|---|
-| `--accent` | `#7E6E94` | Borders, labels, separadores suaves |
-| `--accent-dark` | `#2D1B4E` | ⚠️ Headlines, botones, elementos focales. **NUNCA como fondo de sección.** |
+| `--accent` | `#7E6E94` | 🚫 Borders, labels, separadores suaves. **NUNCA como background de botones** — demasiado claro, se ve lavanda. |
+| `--accent-dark` | `#2D1B4E` | ✅ **Botones**, headlines, elementos focales. Es el color sólido principal para interactivos. **NUNCA como fondo de sección.** |
 | `--accent-deep` | `#5E5070` | Hover entre `--accent` y `--accent-dark`. **NUNCA como fondo.** |
 | `--accent-light` | `rgba(126,110,148,0.08)` | Backgrounds de hover muy sutil |
 | `--accent-border` | `rgba(126,110,148,0.18)` | Borders suaves sobre fondo claro |
+
+> ⚠️ **Regla de botones**: Los botones con fondo sólido en light mode SIEMPRE usan `--accent-dark` (#2D1B4E), nunca `--accent` (#7E6E94). El mauve claro es para borders y labels, no para fondos de botones — se ve lavanda/infantil.
 
 ### Amarillo (sólo en fondo oscuro)
 
